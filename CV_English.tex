@@ -1,61 +1,125 @@
 \documentclass[a4paper,12pt,oneside]{letter}
 
+
+%%%%%%%%%% PACKAGES %%%%%%%%%%
+
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{multicol}
 \usepackage[english]{babel}
-\usepackage{fontenc}
 \usepackage[pdftex]{graphicx}
 
-\usepackage[pdftex=true,
-hyperindex=true,
-colorlinks=true,pdfstartview={Fit}]{hyperref}
-\hypersetup{urlcolor=blue}
-
-
 \usepackage{url}
-
-\setlength{\parindent}{0cm} %Pour le retrait du paragraphe
-
-\usepackage{soul} % Pour souligner ou barrer du texte
+\usepackage{soul} 
 \usepackage{ulem}
-
 \usepackage{textcomp}
-
-\usepackage{setspace} % Interligne
-\singlespacing
-%\onehalfspacing
-%\doublespacing
-
+\usepackage{setspace}
 \usepackage{geometry}
-\geometry{%
-a4paper,
-body={180mm,265mm},
-left=15mm,top=15mm,
-headheight=7mm,headsep=4mm,
-marginparsep=4mm,
-marginparwidth=11mm}
 
 %\usepackage{eurosym}
-
-%\usepackage{bookman} % Différents packs de police
+%\usepackage{bookman} 
 %\usepackage{charter}
 %\usepackage{newcent}
 \usepackage{lmodern}
 %\usepackage{mathpazo}
 %\usepackage{mathptmx}
 
+\usepackage[pdftex=true,
+            hyperindex=true,
+            colorlinks=true,
+            pdfstartview={Fit}]{hyperref}
 
-\usepackage{multicol} % Pour utiliser l'environnement multicol
-\setlength\columnseprule{.4pt} % Pour mettre un trait séparateur de colonnes
-\usepackage{multirow} % Pour fusionner les lignes dans les tableaux
+\usepackage{multicol} 
+\usepackage{multirow} 
 \usepackage{array}
-\usepackage{rotating} % Pour tourner un tableau
+\usepackage{rotating} 
 \usepackage{colortbl}
-\usepackage{xcolor}
+\usepackage{xcolor}            
+            
+
+%%%%%%%%%% SETTINGS %%%%%%%%%%            
+            
+\setlength{\parindent}{0cm} 
+\setlength\columnseprule{.4pt} 
+
+\setlength\minrowclearance{0.2cm}
+\setlength\arrayrulewidth{2pt}
+
+\singlespacing
+%\onehalfspacing
+%\doublespacing
+
+\hypersetup{urlcolor=blue}
+
+\geometry{
+    a4paper,
+    body={180mm,265mm},
+    left=15mm,
+    top=15mm,
+    headheight=7mm,
+    headsep=4mm,
+    marginparsep=4mm,
+    marginparwidth=11mm}
 
 
+%%%%%%%%%% FUNCTIONS %%%%%%%%%%
+
+\newcommand{\doi}[1]{
+    doi:\href{https://doi.org/#1}{#1}
+}
+
+\newcommand{\materialicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/materials_small_color.png}}}
+}
+
+\newcommand{\githubicon}[1]{
+    \href{https://github.com/#1}
+         {{\includegraphics[width=0.4cm]{./images/github.png}}}
+}
+
+\newcommand{\dataicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/data_small_color.png}}}
+}
+
+\newcommand{\doubleline}{
+    \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+    \hline 
+    \hline
+    \end{tabular*}
+}
+
+\newcommand{\largetitle}[1]{
+
+    {
+        \newcolumntype{B}{%
+        >{\Large \centering \columncolor[gray]{.9}[.5\tabcolsep] \bfseries }%
+        p{17.6cm}}
+
+        {
+            \medskip 
+            \begin{tabular}{B}
+            \underline{\uppercase{#1}}
+            \end{tabular}
+        }
+
+    }
+
+}
+
+\newcommand{\smalltitle}[1]{
+    \begin{center}
+        \large\textbf{#1}
+    \end{center}
+}
+
+\newcommand{\bulletbold}[1]{\textbullet~\textbf{#1}:}
+
+\newcommand{\bulletboldunder}[1]{\textbullet~\underline{\textbf{#1:}}}
+
+
+%%%%%%%%%% START %%%%%%%%%%
 
 \date{2018-31-10}
 
@@ -65,422 +129,75 @@ marginparwidth=11mm}
 
 Languages: French, English, German (basics)
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
- \hline 
- \hline
-\end{tabular*}
+\doubleline
 
 \begin{minipage}{.49\textwidth}
 \begin{description}
- \item[Email:] \href{mailto:remi\textunderscore gau@hotmail.com}{remi\textunderscore gau@hotmail.com}
- \item[Website:] \href{https://remi-gau.github.io/}{https://remi-gau.github.io/}
- \item[Open science framework:] \href{https://osf.io/uamsk}{Remi\textunderscore Gau} 
+    \item[Email:] \href{mailto:remi\textunderscore gau@hotmail.com}{remi\textunderscore gau@hotmail.com}
+    \item[Website:] \href{https://remi-gau.github.io/}{https://remi-gau.github.io/}
+    \item[Open science framework:] \href{https://osf.io/uamsk}{Remi\textunderscore Gau} 
  \end{description}
 \end{minipage}
 \begin{minipage}{.49\textwidth}
 \begin{description}
- \item[GitHub:] \href{https://github.com/Remi-Gau}{Remi-Gau}
- \item[Twitter:] \href{http://www.twitter.com/RemiGau}{@RemiGau}
- \item[ORCID:] \href{https://orcid.org/0000-0002-1535-9767}{0000-0002-1535-9767}
+    \item[GitHub:] \href{https://github.com/Remi-Gau}{Remi-Gau}
+    \item[Twitter:] \href{http://www.twitter.com/RemiGau}{@RemiGau}
+    \item[ORCID:] \href{https://orcid.org/0000-0002-1535-9767}{0000-0002-1535-9767}
  \end{description}
 \end{minipage}
 \vspace{10pt}
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
- \hline 
- \hline
-\end{tabular*}
+\doubleline
 
 
-\setlength\minrowclearance{0.2cm}
-\setlength\arrayrulewidth{2pt}
-
-{%
+{
 
 \newcolumntype{A}{%
 >{\bfseries}%
 p{2.6cm}}
 
-\newcolumntype{B}{%
->{\Large \centering \columncolor[gray]{.9}[.5\tabcolsep] \bfseries }%
-p{17.6cm}}
 
-
-
-\medskip 
-
-\begin{tabular}{B}
-\underline{CURRENT POSITION}
-\end{tabular}
+\largetitle{current position}
 
 Post-doctoral fellow in the \href{https://cpplab.be/}{Crossmodal perception and plasticity laboratory} at the universite catholique de Louvain la Neuve (Belgium)
 
-\medskip 
+\largetitle{academic qualifications}
+\input{./sections/qualifications}
 
+\largetitle{scientific contributions}
 
-\begin{tabular}{B}
-\underline{ACADEMIC QUALIFICATIONS}
-\end{tabular}
+\smalltitle{Peer reviewed papers}
+\input{./sections/papers.tex}
 
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2012:} 	& \hfill \large\textbf{PhD in Neuroscience} \\
-						& \underline{Laboratories:} \newline
-						\textit{Computational Cognitive Neuroimaging Laboratory}, School of psychology, University of Birmingham, UK \newline
-						registered at the \textit{International Max Planck Research School}, Graduate training centre of neuroscience, Tübingen, Germany \\
-						& \underline{Thesis title:} Cortical laminar analyis of multisensory integration using high-field fMRI\\
-						& \underline{Supervisor:} Pr. Dr. MD. Uta Noppeney \underline{Email:} \href{mailto:u.noppeney@bham.ac.uk}{u.noppeney@bham.ac.uk}
-\end{tabular}
+\smalltitle{Open-science}
+\input{./sections/open_science.tex}
 
-\medskip 
+\smalltitle{Preprint}
+\input{./sections/preprints.tex}
 
+\smalltitle{Posters}
+\input{./sections/posters.tex} 
 
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2006-2010:} 	& \hfill \large\textbf{PhD in neuroscience} \hfill Defended in September 2010 \\ 
-					& \textit{University Pierre et Marie Curie}, Paris, France \newline
-					  Doctoral School « Cerveau, Cognition, Comportement » \newline
-					  first class honours \\
-					& \underline{Thesis title:} Serotonergic neurons of the lateral paragigantocellular nucleus: roles in pain modulation and baroreflex inhibition \\
-					& \underline{Laboratory:} Psychiatry and Neurosciences Center \\
-					& \underline{Supervisor:} Dr. MD. Jean-François Bernard 
-\end{tabular} 
+\smalltitle{Talks}
+\input{./sections/talks.tex}
 
-\medskip 
+\largetitle{professional activities}
+\input{./sections/professional_activities}
 
-\begin{center}
- \large\textbf{Graduate qualifications}
-\end{center}
+\largetitle{teaching}
+\input{./sections/teaching.tex}
 
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2005-2006:} & \large\textbf{Master of Integrative Biology and Physiology: Neurosciences (research specialization)} \newline
-				     \normalsize \textit{University Pierre et Marie Curie}, Paris, France \newline
-				     Second class honours ; rank: NA \\ %; rank: NA
-\textbullet~\underline{2004-2005:} & \large\textbf{Master of Neuropsychology (research specialization)} \newline
-				     \normalsize \textit{University Paul Sabatier}, Toulouse, France\newline
-				     Second class honours ; rank: NA \\ %; rank: NA
-\textbullet~\underline{2003-2004:} & \large\textbf{Master of Cellular Biology and Animal Physiology} \newline
-				     \normalsize \textit{McGill university},Montréal, Canada, through the CREPUQ exchange program with the University of Montpellier II, France\newline
-				     Second class honours; rank: 1/55
-\end{tabular} 
+\largetitle{research and technical skills}
+\input{./sections/skills.tex}
 
+\largetitle{grants}
+\input{./sections/grants.tex}
 
-\begin{center}
- \large\textbf{Undergraduate qualifications}
-\end{center}
+\largetitle{other academic appointments}
 
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2002-2003:} & \large\textbf{License of Cellular Biology and Animal Physiology} \newline
-				     \normalsize \textit{University of Montpellier II}, France \newline
-				     Second class honours; rank: 1/80 \\
-\textbullet~\underline{2001-2003:} & \large\textbf{Diplôme d’Etudes Universitaires Générales of Psychology} \newline
-				     \normalsize \textit{University Paul-Valéry}, Montpellier, France\newline
-				     Second class honours ; rank: NA \\ %; rank: NA
-\textbullet~\underline{2000-2002:} & \large\textbf{Diplôme d’Etudes Universitaires Générales of Biochemistry and Physiology} \newline
-				     \normalsize \textit{University of Montpellier II}, France\newline
-				     First class honours; rank: 3/250
-\end{tabular}
-
-
-\begin{center}
- \large\textbf{Baccalaureate}
-\end{center}
-
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2000:} & \large\textbf{International Baccalaureate} \newline
-				\normalsize Red Cross Nordic United World College, Flekke, Norway \newline
-				Grade: 36/45 \\
-\end{tabular}
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{SCIENTIFIC CONTRIBUTIONS}
-\end{tabular}
-
-
-\begin{center}
-  \href{https://osf.io/4h63t/}{\large\textbf{Peer reviewed papers}}
-\end{center}
-
-\textbullet~\textbf{Gau R}, Noppeney, U; 
-\href{http://www.sciencedirect.com/science/article/pii/S1053811915008605}{How prior expectations shape multisensory perception}, \textit{Neuroimage}, 2016; DOI: 10.1016/j.neuroimage.2015.09.045,  \href{https://github.com/Remi-Gau/McGurk_prior_code}{\includegraphics[width=0.4cm]{materials_small_color.png}} \href{https://identifiers.org/neurovault.collection:4172}{\includegraphics[width=0.4cm]{data_small_color.png}}
-
-\textbullet~\textbf{Gau R}, Sevoz-Couche C, Hamon M, Bernard JF; 
-\href{http://www.researchgate.net/profile/Remi_Gau/publication/233394350_Noxious_stimulation_excites_serotonergic_neurons_A_comparison_between_the_lateral_paragigantocellular_reticular_and_the_raphe_magnus_nuclei/links/586bf62508aebf17d3a5b232.pdf}{Noxious stimulation excites serotonergic neurons: a comparison between the lateral paragigantocellular reticular and the raphe magnus nuclei}, \textit{Pain}, 2013; DOI: 10.1016/j.pain.2012.09.012
-
-\textbullet~\textbf{Gau R}, Sevoz-Couche C, Laguzzi R, Hamon M, Bernard JF; \href{http://www.researchgate.net/profile/Remi_Gau/publication/38057329_Inhibition_of_cardiac_baroreflex_by_noxious_thermal_stimuli_A_key_role_for_lateral_paragigantocellular_serotonergic_cells/links/586bf90d08ae8fce4919e188.pdf}{Inhibition of Baroreflex by Nociception: A Key Role for Lateral Paragigantocellular Serotonergic Cells}, \textit{Pain}, 2009; \\DOI: 10.1016/j.pain.2009.09.018
-
-\textbullet~Bernard JF, Netzer F, \textbf{Gau R}, Hamon M, Laguzzi R, Sevoz-Couche C; 
-\href{http://www.researchgate.net/profile/Remi_Gau/publication/5856955_Critical_role_of_B3_serotonergic_cells_in_baroreflex_inhibition_during_the_defense_reaction_triggered_by_dorsal_periaqueductal_gray_stimulation/links/586bf81d08ae6eb871bb6f47.pdf}{Critical role of B3 serotonergic cells in baroreflex inhibition during the defense reaction triggered by dorsal periaqueductal gray stimulation}, \textit{Journal of comparative anatomy}, 2008; DOI: 10.1002/cne.21532
-
-\begin{center}
- \large\textbf{Preprint}
- \end{center}
- 
- \textbullet~Botvinik-Nezer R, et al; \href{https://doi.org/10.1101/843193}{Variability in the analysis of a single neuroimaging dataset by many teams}, \textit{biorxiv}, 2018; DOI: 10.1101/843193 \href{https://doi.org/10.5281/zenodo.3339821}{\includegraphics[width=0.4cm]{materials_small_color.png}}
- 
- \textbullet~\textbf{Gau R}, Bazin PL, Trampel R, Turner R, Noppeney U; \href{https://www.biorxiv.org/content/10.1101/548933v1}{Resolving multisensory and attentional influences across cortical depth in sensory cortices}, \textit{biorxiv}, 2018; DOI: 10.1101/548933 \href{https://doi.org/10.5281/zenodo.3581319}{\includegraphics[width=0.4cm]{materials_small_color.png}} \href{https://osf.io/7ka5j/}{\includegraphics[width=0.4cm]{data_small_color.png}}
- 
- 
-\begin{center}
- \large\textbf{Open-source software}
- \end{center} 
- 
- 
-    \textbullet~\textbf{eCOBIDAS}
-    
-    
-
-Identifier: DOI 10.17605/OSF.IO/ANVQY
-
-    
-    \textbullet~\textbf{Brain Imaging Data Structure Specification}
-    
-    The Brain Imaging Data Structure (BIDS) is the dominant organizational format and standard in neuroimaging data analysis.
-    
-    \textbullet~\textbf{CPP pipeline}
-    
-    10.5281/zenodo.3554331
-    
-    
-    \textbullet~\textbf{pyBIDS and bids-matlab}
-    
-    PyBIDS \href{https://doi.org/10.5281/zenodo.2537312}{\includegraphics[width=0.4cm]{materials_small_color.png}} and bids-matlab \href{https://github.com/bids-standard/bids-matlab}{{\includegraphics[width=0.4cm]{github.png}}} are collections of helpful modules for querying and manipulating BIDS datasets.
- 
-
-\begin{center}
- \href{https://osf.io/xgdh7/}{\large\textbf{Posters}}
-\end{center}
-
-\textbullet~\textbf{Gau R}, Trampel R, Bazin PL, Turner R, Noppeney U; \href{http://www.researchgate.net/profile/Remi_Gau/publication/312040907_Layer-specific_attentional_modulation_and_multisensory_interactions_in_sensory_cortices/links/586bec8108ae8fce4919e07e.pdf?origin=publication_detail&ev=pub_int_prw_xdl&msrp=ebfE-ttTbrYfVzAofje5aX7FDjiW85HC3yqk8seJjhsOoLqmeRviQBtfDuXmv_czDArKxDp2vM32swxlbQzyvbVTbKL6xRpsEZ-BeqgslOo.KWD8vv500DrprbLnXSrDxinWDQrliScdbic1rjyyqLUG12KOwbjri9jbFDwSYWMkGLoSocKyAei7eQLoDCU9Dw.4eQVGmpcVG-AAQDI4KiYt-xA9SDkF_u7xvWOznoi52trnfagq5aJVIAgpfhgitdzt3LYuUPdJ8gE6jmG5I94Nw}{Layer-specific attentional modulation and multisensory interactions in sensory cortices}, Annual Meeting of the Organization for Human Brain Mapping, Geneva (Switzerland), 2016; DOI: 10.13140/RG.2.2.32219.57124
-
-\textbullet~\textbf{Gau R}, Trampel R, Bazin PL, Turner R, Noppeney U; \href{http://www.researchgate.net/profile/Remi_Gau/publication/312040995_Effect_of_sensory_modality_and_attention_on_layer-specific_activations_in_sensory_cortices/links/586bef4108ae329d621216ff.pdf?origin=publication_detail&ev=pub_int_prw_xdl&msrp=rWGQkC7vAu_P6H2YxCI3M31egmAPzpbXdoRN1OdTlFE2ytvRyytc2DItV2mPnvlGPXAOT-Q0hOx0cWKEfhvF_ZK7oOzQtXTOX1cxj1f7wdc.EjFU3lhxIUR_qptyNrCYqZDXVg6nG7zWe8VL0WxLSdSMUGnjz_v4L5Yov-RWctdEwDPFRXLasy1FBdCk7Dlydw.IANTdlTw5MPB88HQJNdTi7lFv6Sygddbknct3mMTSsgH20heYrYcKnbsQLxtcsNd-HHWZUEIEP4-7bkQLNDUhQ}{Effect of sensory modality and attention on layer-specific activations in sensory cortices}, Annual Meeting of the Organization for Human Brain Mapping, Hamburg (Germany), 2014; DOI: 10.13140/RG.2.2.18797.79846
-
-\textbullet~\textbf{Gau R}, Noppeney U; \href{http://www.researchgate.net/profile/Remi_Gau/publication/312040995_Effect_of_sensory_modality_and_attention_on_layer-specific_activations_in_sensory_cortices/links/586bef4108ae329d621216ff.pdf?origin=publication_detail&ev=pub_int_prw_xdl&msrp=rWGQkC7vAu_P6H2YxCI3M31egmAPzpbXdoRN1OdTlFE2ytvRyytc2DItV2mPnvlGPXAOT-Q0hOx0cWKEfhvF_ZK7oOzQtXTOX1cxj1f7wdc.EjFU3lhxIUR_qptyNrCYqZDXVg6nG7zWe8VL0WxLSdSMUGnjz_v4L5Yov-RWctdEwDPFRXLasy1FBdCk7Dlydw.IANTdlTw5MPB88HQJNdTi7lFv6Sygddbknct3mMTSsgH20heYrYcKnbsQLxtcsNd-HHWZUEIEP4-7bkQLNDUhQ}{The left prefrontal cortex controls information integration by combining bottom-up inputs and top-down predictions}, Annual meeting of the Society for neurosciences, San Diego, (California, USA), 2013; DOI: 10.13140/RG.2.2.12086.91207
-
-\textbullet~Bernard JF, Sevoz-Couche C, Hamon M, \textbf{Gau R}; Responses of lateral paragigantocellular and raphe magnus serotonergic neurons to noxious stimuli: a comparative reappraisal using juxtacellular recording, 13\textsuperscript{th} world congress on pain; International association for the study of pain; Montréal (Québec, Canada), 2010
-
-\textbullet~Bernard JF, Sevoz-Couche C, Hamon M, \textbf{Gau R}; \href{https://osf.io/efqub/}{Involvement of lateral paragigantocellular reticular serotonergic and non-serotonergic neurons in nociceptive processes}, Annual meeting of the Society for neurosciences, Chicago, (Ilinois, USA), 2009
-
-\textbullet~\textbf{Gau R}, Sevoz-Couche C, Hamon M, Laguzzi R, Bernard JF; \href{https://osf.io/hxkgv/}{Inhibition of cardiac baroreflex by intense noxious stimuli: a serotonergic mechanism involving the lateral paragigantocellular reticular nuclei}; Annual meeting of the Society for neurosciences, Washington (D.C., USA), 2008
-
-\textbullet~Bernard JF, Sevoz-Couche C, Hamon M, Laguzzi R, \textbf{Gau R}; \href{https://osf.io/4rjst/}{Critical role of the B3 group in the baroreflex inhibition evoked by thermal noxious stimulation in the rat}, Annual meeting of the Society for neurosciences, San Diego (California, USA), 2007
-
-\textbullet~Bernard JF, Netzer F, \textbf{Gau R}, Hamon M, Laguzzi R, Sevoz-Couche C; Serotonergic neurons of B3 group: critical role in baroreflex inhibition during the defense reaction in the rat; Annual meeting of the Society for neurosciences, Atlanta (Georgia, USA), 2006
-
-
-\begin{center}
- \href{https://osf.io/4h63t/}{\large\textbf{Talks}}
-\end{center}
-
-\textbullet~\textbf{Gau R}; \href{https://figshare.com/s/06d360f8ec1be9431f6e}{Laminar profiles dissociate attentional and crossmodal influences in sensory cortices}; Brain in Depth 2018, Magdeburg (Germany), 31\textsuperscript{rst} May 2018
-
-\textbullet~\textbf{Gau R}; \href{http://www.researchgate.net/profile/Remi_Gau/publication/312084405_Implication_du_groupe_serotoninergique_B3_dans_le_controle_des_circuits_de_la_douleur_et_des_reactions_neurovegetatives_associees/links/586e5f4a08ae6eb871bcfcc2?origin=publication_detail&ev=pub_int_prw_xdl&msrp=fq7qspniFbcYB53CbrroAtz2DNXxUJar7CmckJaw6O2YzI7LWasFAW99t9G74Z5sL-KLoJT2Dqv8D075R3ghy55Fy6xPne3_ARZvM87O3Ao.5ii75N_9y4vKCns-VUuTTDNhKb6ruhYALqaObgtdOB4WIkUSArh9tdzN9AtPRWz68YGcjTb3scxfWZy6tYxnSg.naSDUCbUZHM6gF6BaFbjpF3ARcyIPTBh1UsuA1cVoOZQsoPMn9YGNC2UsgdGA0P28xoO8bXY1221-tRVtfrUZA}{Implication du groupe sérotoninergique B3 dans le contrôle des circuits de la douleur et des réactions neurovégétatives associées}; 10\textsuperscript{th} congress of the French society for the study and treatment of pain, Marseille (France), 18\textsuperscript{th} November 2010
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{TEACHING EXPERIENCE}
-\end{tabular}
-
-\textbullet~\underline{\textbf{November 2019:}} 	Co-organizer and instructor at the first neuroimaging workshop at the University Catholique de Louvain of Tartu (Belgium) \href{https://github.com/cpp-lln-lab/fMRI_workshop_201911}{{\includegraphics[width=0.4cm]{github.png}}} \href{https://doi.org/10.5281/zenodo.3548325}{\includegraphics[width=0.4cm]{data_small_color.png}}
-
-\textbullet~\underline{\textbf{June 2019:}} 	Mini-lab leader for the workshop \textit{Empirical Methods in Cognitive Linguistics 8} at the University of Tartu (Estonia); \href{https://sisu.ut.ee/emcl8tartu/emcl-organising-committee}{Website}
-
-\textbullet~\underline{\textbf{2\textsuperscript{nd} Semester of 2013 to 2016:}} 	Teaching assistant for the \textit{Advanced Brain Imaging} masters course at the University of Birmingham (UK) \href{https://github.com/Remi-Gau/advanced_fMRI_course}{{\includegraphics[width=0.4cm]{github.png}}}
-
-Supervisor: Noppeney, U; Email: \href{mailto:u.noppeney@bham.ac.uk}{u.noppeney@bham.ac.uk}
-
-\textbullet~\underline{\textbf{2\textsuperscript{nd} Semester 2009:}} 	Teaching assistant for the \textit{Human Evolution} class of the preparatory program to paramedical training at the University Pierre et Marie Curie (Paris, France)
-
-Supervisors: Aurengo, A \& Darribere, T; Tel: (+33) 1 40 77 95 77
-
-\textbullet~\underline{\textbf{1\textsuperscript{rst} Semester 2005:}} 	Teaching assistant for the \textit{Psychophysiology} undergraduate class of the psychology program of the University Mirail-Toulouse II (France)
-
-Supervisor: Bretdibat JL; Email: \href{mailto:bretdiba@univ-tlse2.fr}{bretdiba@univ-tlse2.fr}
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{RESEARCH AND TECHNICAL SKILLS}
-\end{tabular}
-
-
-\textbullet~\textbf{Human neuroimaging:} design, implementation and analysis of structural and functional MRI studies, fMRI design efficiency optimization, preprocessing, mass univariate and multivariate pattern analysis, high-field structural and functional MRI analyses
-
-\textbullet~\textbf{Cognitive neuroscience:} design, implementation and analysis of psychophysics and eyetracking studies of multi-sensory integration 
-
-
-
-\textbullet~\textbf{Information technology:}
-
-\begin{center}
-\begin{tabular}[c]{|c|c|c|}
-\hline\hline
-Program & Area & Knowledge \\
-\hline
-Matlab & Programming & Excellent \\ 
-SPM & Neuroimaging analysis & Excellent \\
-Freesurfer & Neuroimaging analysis & Excellent \\
-CBS tools & High-field neuroimaging analysis & Excellent \\
-LIBSVM & Multivariate pattern analysis & Excellent \\
-PsychToolBox & Stimulus presentation & Excellent \\
-Presentation & Stimulus presentation & Excellent \\
-Bash scripting & Programming & Good \\
-cvMANOVA & Multivariate pattern analysis & Good \\
-Palamedes & Psychophysics data analysis & Good \\
-Spike 2 & Physiological data recordings & Good \\
-Git/GitHub & Version control & Good \\
-SPSS & Statistical analysis & Good \\
-\LaTeX & Document production & Good \\
-R & Programming & Basic \\
-C/C++ & Programming & Basic \\
-FSL & Neuroimaging analysis & Basic \\
-Pronto & Multivariate pattern analysis & Basic \\
-TDT & Multivariate pattern analysis & Basic \\
-\hline\hline
-\end{tabular} 
-\end{center}
-
-\textbullet~\textbf{Functional neuroanatomy:} direct online physiological parameters recording and analysis, use of neuroanatomical tracers (Phaseolus, TMR, fluorogold), functional c-fos expression experiments, stereotaxic local pharmacological neuroinactivation. 
-
-\textbullet~\textbf{Electrophysiology:} \textit{In vivo} extracellular recording combined to juxtacellular labeling in halothane anesthetized rats, LTP protocols and associated pharmacological modulation on rat brain slices using intracellular recording in current clamp or extracellular recording with a multi-electrodes array. 
-
-\textbullet~\textbf{Microscopy \& histology:} Total animal fixation with formalin \& brain extraction, general histological techniques (Cresyl violet, thionin), double immunohistochemical and immunofluorescent labeling, epifluorescent transmission and confocal microscope images acquisition and processing.
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{PROFESSIONAL ACTIVITIES}
-\end{tabular}
-
-
-\textbf{Contribution to open science}
-
-\textbullet~Appelhoff S. et al; 
-\href{https://f1000research.com/documents/8-1329}{BIDS and the Neuroimaging Data Model (NIDM)}, \textit{F1000Research}, 2019; DOI: 10.7490/f1000research.1117140.1
-
-\textbullet~\textbf{Gau R.} et al; 
-\href{https://github.com/ohbm/hackathon2019/issues/49}{A checklist for improving neuroimaging methods and results reporting}, \textit{OHBM hackathon}, 2019
-
-\textbullet~Appelhoff S. et al; 
-\href{https://f1000research.com/documents/8-1329}{BIDS and the Neuroimaging Data Model (NIDM)}, \textit{SIPS hackathon}, 2019;
-
-\textbullet~ Co-organizer of the EiF Journal Club on methodology and replicability in psychology at the University of Birmingham (UK)
-
-
-\href{http://publons.com/author/1205193/remi-gau#profile}{\textbf{Journal referee for}}
-
-\textbullet~Journal of Experimental Neuroscience
-
-\textbullet~Proceedings of the Annual Conference of the Cognitive Science Society
-
-
-\textbf{Societies membership}
-
-\textbullet~Society for Neuroscience
-
-\textbullet~Organization for Human Brain Mapping
-
-\textbullet~Society for the improvement of psychological science
-
-
-\textbf{Outreach}
-
-
-\textbullet~\underline{\textbf{2019-present:}} active member of the Comité belge pour l'analyse critique des parasciences
-
-\textbullet~ \href{https://dx.doi.org/10.6084/m9.figshare.4535423.v1}{Our brain, our senses, and us}; Interactive presentation given at the children section of the Skeptics in the Pub of Gravesend (UK); 20\textsuperscript{th} October 2015
-
-
-\textbf{Internal discussion}
-
-
-\textbullet~ \href{https://osf.io/vu327/}{More brain droppings on the replication crisis in psychology}; talk given at a brown bag meeting at the department of psychology of the université catholique de Louvain la Neuve; 11\textsuperscript{th} April 2019
-
-\textbullet~ \href{https://dx.doi.org/10.6084/m9.figshare.4257992.v1}{Brain droppings on the replication crisis in psychology}; talk given at the post-graduate seminar of the Shcool of Psychology at the University of Birmingham (UK); 24\textsuperscript{th} November 2016
-
-
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{SCHOLARSHIPS \& AWARDS}
-\end{tabular}
-
-\begin{tabular}{Ap{14.5cm}}
-\textbullet~\underline{2009-2010:} & Award from the French society for the study and treatment of pain\\
-     
-\textbullet~\underline{2006-2009:} & Scholarship from the French ministry of research and technology \\
-\end{tabular}
-
-
-
-\medskip 
-
-\begin{tabular}{B}
- \underline{OTHER ACADEMIC APPOINTMENTS}
-\end{tabular}
-
-\begin{center}
-\large\textbf{Laboratory training}
-\end{center}
-
-\begin{minipage}[c]{7.7cm}
-\textbullet~\underline{\textbf{2003-2005}}: Conducted the data analysis of a pilot study preliminary to a multicentric rehabilitation program for dyslexic children.
-\end{minipage}
-\hfill
-\begin{minipage}[c]{10cm}
-\setlength\minrowclearance{0.2cm}
-\setlength\arrayrulewidth{1.5pt}
-\small
-\begin{tabular}[t]{|l|}\hline
-\underline{Laboratory:} Neuroimaging and neurological handicaps\\
-INSERM unit 825, Hôpital Purpan, Toulouse, France\\
-\underline{Supervisor:} Dr. MD. Demonet JF\\
-\underline{Email:} \href{mailto:jean-francois.demonet@inserm.fr}{jean-francois.demonet@inserm.fr}\\
-\hline
-\end{tabular}
-\end{minipage}
-
-\begin{minipage}[c]{6.7cm}
-\textbullet~\underline{\textbf{2004:}}	Worked on electrophysiology experiments aimed at better understanding the effects of dopamine on the long term potentiation (LTP) of pyramidal neurons in slices of rat prefrontal cortex.
-\end{minipage}
-\hspace{3mm}
-\begin{minipage}[c]{\textwidth}
-\setlength\minrowclearance{0.1cm}
-\setlength\arrayrulewidth{1.5pt}
-\small
-\begin{tabular}[c]{|l|}\hline
-\underline{Laboratory:} Laboratoire de biologie des processus adaptatifs\\
-University Pierre et Marie Curie, Paris, France\\
-\underline{Supervisor:} Dr. Otani S\\
-\underline{Email:} \href{mailto:satoru.otani@snv.jussieu.fr}{satoru.otani@snv.jussieu.fr}\\ \hline
-\end{tabular}
-\end{minipage}
-
-\begin{minipage}[c]{7.7cm}
-\textbullet~\underline{\textbf{2003:}}	Designed and applied a series of experiments examining the effects of prenatal stress or in-utero cocaine injection on learning in young rats and on hippocampic long term potentiation on rat brain slices.
-\end{minipage}
-\hspace{3mm}
-\begin{minipage}[c]{\textwidth}
-\setlength\minrowclearance{0.1cm}
-\setlength\arrayrulewidth{1.5pt}
-\small
-\begin{tabular}[c]{|l|}\hline
-\underline{Laboratory:} Laboratoire de plasticité cérébrale\\
-CNRS-UMR 5102, University of Montpellier II, France\\
-\underline{Supervisor:} Dr. Vignes M\\
-\underline{Email:} \href{mailto:mvignes@univ-montp2.fr}{mvignes@univ-montp2.fr}\\ \hline
-\end{tabular}
-\end{minipage}
- 
+\smalltitle{Laboratory training}
+\input{./sections/other_academic.tex}
 
 }
 
 \end{document}
-\grid
