@@ -1,0 +1,79 @@
+%%%%%%%%%% FUNCTIONS %%%%%%%%%%
+
+\newcommand{\doi}[1]{
+    doi:\href{https://doi.org/#1}{#1}
+}
+
+
+\newcommand{\doubleline}{
+    \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+    \hline 
+    \hline
+    \end{tabular*}
+}
+
+%% TITLES
+\newcommand{\largetitle}[1]{
+    {
+        \newcolumntype{B}{%
+        >{\Large \centering \columncolor[gray]{.9}[.5\tabcolsep] \bfseries }%
+        p{17cm}}
+
+        {
+            \medskip 
+            \begin{tabular}{B}
+            \underline{\uppercase{#1}}
+            \end{tabular}
+        }
+
+    }
+}
+
+\newcommand{\smalltitle}[1]{
+    \begin{center}
+        \large\textbf{#1}
+    \end{center}
+}
+
+\newcommand{\smallertitle}[1]{
+    \begin{center}
+        \textbf{#1}
+    \end{center}
+}
+
+%% BULLETS
+\newcommand{\bulletbold}[1]{\textbullet~\textbf{#1}:}
+
+\newcommand{\bulletboldunder}[1]{\textbullet~\underline{\textbf{#1:}}}
+
+
+%% ICONS
+\newcommand{\videoicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/multimedia.png}}}
+}
+
+\newcommand{\materialicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/materials_small_color.png}}}
+}
+
+\newcommand{\githubicon}[1]{
+    \href{https://github.com/#1}
+         {{\includegraphics[width=0.4cm]{./images/github.png}}}
+}
+
+\newcommand{\dataicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/data_small_color.png}}}
+}
+
+\newcommand{\webicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/domain-registration.png}}}
+}
+
+\newcommand{\soundicon}[1]{
+    \href{#1}
+         {{\includegraphics[width=0.4cm]{./images/volume.png}}}
+}

@@ -34,7 +34,9 @@
 \usepackage{array}
 \usepackage{rotating} 
 \usepackage{colortbl}
-\usepackage{xcolor}            
+\usepackage{xcolor}        
+
+% \usepackage{fontawesome}
             
 
 %%%%%%%%%% SETTINGS %%%%%%%%%%            
@@ -53,75 +55,22 @@
 
 \geometry{
     a4paper,
-    body={180mm,265mm},
+    body={175mm,265mm},
     left=15mm,
     top=15mm,
     headheight=7mm,
     headsep=4mm,
     marginparsep=4mm,
     marginparwidth=11mm}
-
-
-%%%%%%%%%% FUNCTIONS %%%%%%%%%%
-
-\newcommand{\doi}[1]{
-    doi:\href{https://doi.org/#1}{#1}
-}
-
-\newcommand{\materialicon}[1]{
-    \href{#1}
-         {{\includegraphics[width=0.4cm]{./images/materials_small_color.png}}}
-}
-
-\newcommand{\githubicon}[1]{
-    \href{https://github.com/#1}
-         {{\includegraphics[width=0.4cm]{./images/github.png}}}
-}
-
-\newcommand{\dataicon}[1]{
-    \href{#1}
-         {{\includegraphics[width=0.4cm]{./images/data_small_color.png}}}
-}
-
-\newcommand{\doubleline}{
-    \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-    \hline 
-    \hline
-    \end{tabular*}
-}
-
-\newcommand{\largetitle}[1]{
-
-    {
-        \newcolumntype{B}{%
-        >{\Large \centering \columncolor[gray]{.9}[.5\tabcolsep] \bfseries }%
-        p{17.6cm}}
-
-        {
-            \medskip 
-            \begin{tabular}{B}
-            \underline{\uppercase{#1}}
-            \end{tabular}
-        }
-
-    }
-
-}
-
-\newcommand{\smalltitle}[1]{
-    \begin{center}
-        \large\textbf{#1}
-    \end{center}
-}
-
-\newcommand{\bulletbold}[1]{\textbullet~\textbf{#1}:}
-
-\newcommand{\bulletboldunder}[1]{\textbullet~\underline{\textbf{#1:}}}
+    
+    
+%%%%%%%%%% COMMANDS %%%%%%%%%%
+\input{./commands}
 
 
 %%%%%%%%%% START %%%%%%%%%%
 
-\date{2018-31-10}
+\date{2021-04-10}
 
 \begin{document}
 
@@ -136,6 +85,7 @@ Languages: French, English, German (basics)
     \item[Email:] \href{mailto:remi\textunderscore gau@hotmail.com}{remi\textunderscore gau@hotmail.com}
     \item[Website:] \href{https://remi-gau.github.io/}{https://remi-gau.github.io/}
     \item[Open science framework:] \href{https://osf.io/uamsk}{Remi\textunderscore Gau} 
+    \newline
  \end{description}
 \end{minipage}
 \begin{minipage}{.49\textwidth}
@@ -143,6 +93,7 @@ Languages: French, English, German (basics)
     \item[GitHub:] \href{https://github.com/Remi-Gau}{Remi-Gau}
     \item[Twitter:] \href{http://www.twitter.com/RemiGau}{@RemiGau}
     \item[ORCID:] \href{https://orcid.org/0000-0002-1535-9767}{0000-0002-1535-9767}
+    \item[Publons:] \href{http://publons.com/author/1205193/remi-gau#profile}{remi-gau}
  \end{description}
 \end{minipage}
 \vspace{10pt}
@@ -156,7 +107,6 @@ Languages: French, English, German (basics)
 >{\bfseries}%
 p{2.6cm}}
 
-
 \largetitle{current position}
 
 Post-doctoral fellow in the \href{https://cpplab.be/}{Crossmodal perception and plasticity laboratory} at the universite catholique de Louvain la Neuve (Belgium)
@@ -166,19 +116,19 @@ Post-doctoral fellow in the \href{https://cpplab.be/}{Crossmodal perception and 
 
 \largetitle{scientific contributions}
 
-\smalltitle{Peer reviewed papers}
+\smalltitle{peer reviewed papers}
 \input{./sections/papers.tex}
 
-\smalltitle{Open-science}
+\smalltitle{open-science}
 \input{./sections/open_science.tex}
 
-\smalltitle{Preprint}
+\smalltitle{preprint}
 \input{./sections/preprints.tex}
 
-\smalltitle{Posters}
+\smalltitle{posters}
 \input{./sections/posters.tex} 
 
-\smalltitle{Talks}
+\smalltitle{talks}
 \input{./sections/talks.tex}
 
 \largetitle{professional activities}
