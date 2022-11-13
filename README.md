@@ -8,7 +8,7 @@ To view on overleaf
 <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 </div>
 
-- multimedia 
+- multimedia
 - domain-registration
 - volume
 
@@ -20,6 +20,3 @@ To view on overleaf
 - Elisabeth Dupre's latex CV: https://github.com/emdupre/dupre-cv
 
 - A tool by Russ Poldrack for automatic generation of a LaTeX-based curriculum vitae (CV): https://github.com/poldrack/autoCV
-
-
-
