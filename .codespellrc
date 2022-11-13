@@ -1,0 +1,4 @@
+[codespell]
+skip = *.log,.git,templates
+ignore-words-list = rouge,
+builtin = clear,rare
