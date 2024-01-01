@@ -1,4 +1,4 @@
 [codespell]
-skip = *.log,.git,templates
-ignore-words-list = rouge,
+skip = *.log,.git,templates/*
+ignore-words-list = rouge,nd,te,groupe,processus
 builtin = clear,rare
